@@ -7,32 +7,32 @@ const projects = [{
   id: 0,
   title: 'Project Alpha',
   url: "https://www.ncdot.gov/",
-  status: "yellow"
+  status: "Y"
 }, {
   id: 1,
   title: 'Project Beta',
   url: "https://www.ncdot.gov/",
-  status: "green"
+  status: "G"
 }, {
   id: 2,
   title: 'Project Kappa',
   url: "http://www.google.com/",
-  status: "red"
+  status: "R"
 }, {
   id: 3,
   title: 'Project Omega',
   url: "https://www.ncdot.gov/",
-  status: "green"
+  status: "G"
 }, {
   id: 4,
   title: 'Project Phi',
   url: "https://www.ncdot.gov/",
-  status: "red"
+  status: "R"
 }, {
   id: 5,
   title: 'Project Zeta',
   url: "https://www.ncdot.gov/",
-  status: "green"
+  status: "G"
 }];
 
 class Projects extends Component {

@@ -40,9 +40,9 @@ class ProjectListItem extends Component {
 
   getIconGivenStatus(status) {
     switch (status) {
-      case "green":
+      case "G":
         return null;
-      case "yellow":
+      case "Y":
         return <AlertWarning />;
       default:
         return <AlertError />;
@@ -51,9 +51,9 @@ class ProjectListItem extends Component {
 
   getBackgroundColorGivenStatus(status) {
     switch (status) {
-      case "green":
+      case "G":
         return green600;
-      case "yellow":
+      case "Y":
         return yellow600;
       default:
         return red600;

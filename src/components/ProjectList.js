@@ -34,7 +34,7 @@ class ProjectList extends Component {
           <List>
             <Subheader className="projectSubheading">Red Projects</Subheader>
             {this.state.projects
-              .filter( row => row.status === "red") 
+              .filter( row => row.status === "R") 
               .map( (row, index) => (
               <ProjectListItem key={index} project={row} />
             ))}
