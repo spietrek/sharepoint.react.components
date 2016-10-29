@@ -4,25 +4,11 @@ import AppBar from 'material-ui/AppBar';
 
 class ProjectAppBar extends Component {
   
-  static get defaultProps() {
-    return {
-      projectsCount: "0 Projects"
-    }
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      projectsCount: this.props.projectsCount + " Projects"
-    };
-  }
-
   render() {
     return (
       <div>
         <Paper zDepth={5}>
-          <AppBar title={this.state.projectsCount} showMenuIconButton={false} />
+          <AppBar title={this.props.projectsCount} showMenuIconButton={false} />
         </Paper>
       </div>
     );
@@ -32,5 +18,9 @@ class ProjectAppBar extends Component {
 export default ProjectAppBar;
 
 ProjectAppBar.propTypes = {
-  projectsCount: PropTypes.number.isRequired
+  projectsCount: PropTypes.string.isRequired
 };
+
+ProjectAppBar.defaultProps = {
+  projectsCount: "0 Projects"
+}

@@ -13,7 +13,25 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>SharePoint React Components</title>
+
+    <style>
+      .projectsContainer {
+        margin: auto;
+        width: 50%;
+        padding: 50px 50px 50px 50px;
+      }
+    </style>
+
+    <script>
+      var L_Menu_BaseUrl = "https://cardinalsolutionsrtp.sharepoint.com/sites/projects";
+      var _spPageContextInfo = {
+          webServerRelativeUrl: "\u002fsites\u002fprojects",
+          webAbsoluteUrl: "https:\u002f\u002fcardinalsolutionsrtp.sharepoint.com\u002fsites\u002fprojects",
+          siteAbsoluteUrl: "https:\u002f\u002fcardinalsolutionsrtp.sharepoint.com\u002fsites\u002fprojects",
+          userId: 9
+      };
+    </script>
   </head>
   <body>
     <div id="root"></div>

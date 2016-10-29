@@ -1,46 +1,40 @@
-import React, { Component } from 'react';
+import React, {
+  Component
+} from 'react';
 import './Projects.css';
+import Api from '../utils/Api';
 import ProjectAppBar from './ProjectAppBar';
 import ProjectList from './ProjectList';
 
-const projects = [{
-  id: 0,
-  title: 'Project Alpha',
-  url: "https://www.ncdot.gov/",
-  status: "Y"
-}, {
-  id: 1,
-  title: 'Project Beta',
-  url: "https://www.ncdot.gov/",
-  status: "G"
-}, {
-  id: 2,
-  title: 'Project Kappa',
-  url: "http://www.google.com/",
-  status: "R"
-}, {
-  id: 3,
-  title: 'Project Omega',
-  url: "https://www.ncdot.gov/",
-  status: "G"
-}, {
-  id: 4,
-  title: 'Project Phi',
-  url: "https://www.ncdot.gov/",
-  status: "R"
-}, {
-  id: 5,
-  title: 'Project Zeta',
-  url: "https://www.ncdot.gov/",
-  status: "G"
-}];
-
 class Projects extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      projects: [],
+      projectsCount: "0 Projects"
+    };
+  }
+
+  componentDidMount() {
+    Api
+      .getSharePointProjectsData()
+      .then(function(data) {
+        this.setState({
+          projects: data.projects,
+          projectsCount: data.projects.length + " Projects"
+        });
+      }.bind(this));
+  }
+
+  componentWillUnmount() {}
+
   render() {
     return (
       <div className="container">
-        <ProjectAppBar projectsCount={projects.length}/>
-        <ProjectList projects={projects} />
+        <ProjectAppBar projectsCount={this.state.projectsCount}/>
+        <ProjectList projects={this.state.projects} />
       </div>
     );
   }
