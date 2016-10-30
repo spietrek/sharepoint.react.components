@@ -17,21 +17,13 @@ import ContentForward from 'material-ui/svg-icons/content/forward';
 
 class ProjectListItem extends Component {
   
-  static get defaultProps() {
-    return {
-      project: {}
-    }
-  }
-
   constructor(props) {
     super(props);
 
     this.getIconGivenStatus = this.getIconGivenStatus.bind(this);
     this.getBackgroundColorGivenStatus = this.getBackgroundColorGivenStatus.bind(this);
 
-    this.state = {
-      project: this.props.project
-    };
+    // 
   }
 
   handleTouchTap(url) {
@@ -63,12 +55,12 @@ class ProjectListItem extends Component {
   render() {
     return (
       <ListItem
-        key={this.state.project.id}
-        primaryText={this.state.project.title}
-        leftAvatar={<Avatar icon={this.getIconGivenStatus(this.state.project.status)}
-        backgroundColor={this.getBackgroundColorGivenStatus(this.state.project.status)} />}
+        key={this.props.project.id}
+        primaryText={this.props.project.title}
+        leftAvatar={<Avatar icon={this.getIconGivenStatus(this.props.project.status)}
+        backgroundColor={this.getBackgroundColorGivenStatus(this.props.project.status)} />}
         rightIcon={<ContentForward />}
-        onTouchTap={ () => { this.handleTouchTap(this.state.project.url) }}
+        onTouchTap={ () => { this.handleTouchTap(this.props.project.url) }}
       />
     );
   }
@@ -78,4 +70,8 @@ export default ProjectListItem;
 
 ProjectListItem.propTypes = {
   project: PropTypes.object.isRequired
-};
+}
+
+ProjectListItem.defaultProps = {
+  project: {}
+}

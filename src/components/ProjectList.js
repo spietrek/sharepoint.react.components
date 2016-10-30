@@ -13,27 +13,13 @@ import ProjectListItem from './ProjectListItem';
 
 class ProjectList extends Component {
   
-  static get defaultProps() {
-    return {
-      projects: []
-    }
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      projects: this.props.projects
-    };
-  }
-
   render() {
     return (
       <div className="container">
         <Paper zDepth={5}>
           <List>
             <Subheader className="projectSubheading">Red Projects</Subheader>
-            {this.state.projects
+            {this.props.projects
               .filter( row => row.status === "R") 
               .map( (row, index) => (
               <ProjectListItem key={index} project={row} />
@@ -42,7 +28,7 @@ class ProjectList extends Component {
           <Divider />
           <List>
             <Subheader className="projectSubheading">All Projects</Subheader>
-            {this.state.projects
+            {this.props.projects
               .map( (row, index) => (
               <ProjectListItem key={index} project={row} />
             ))}
@@ -58,3 +44,7 @@ export default ProjectList;
 ProjectList.propTypes = {
   projects: PropTypes.array.isRequired
 };
+
+ProjectList.defaultProps = {
+  projects: []
+}
