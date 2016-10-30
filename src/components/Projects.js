@@ -2,6 +2,9 @@ import React, {
   Component
 } from 'react';
 import './Projects.css';
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Api from '../utils/Api';
 import ProjectAppBar from './ProjectAppBar';
 import ProjectList from './ProjectList';
@@ -32,10 +35,12 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="container">
+      <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
+        <div className="container">
         <ProjectAppBar projectsCount={this.state.projectsCount}/>
         <ProjectList projects={this.state.projects} />
       </div>
+      </MuiThemeProvider>
     );
   }
 }
