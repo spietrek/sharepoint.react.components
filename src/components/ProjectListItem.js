@@ -16,14 +16,12 @@ import AlertWarning from 'material-ui/svg-icons/alert/warning';
 import ContentForward from 'material-ui/svg-icons/content/forward';
 
 class ProjectListItem extends Component {
-  
-  constructor(props) {
-    super(props);
+
+  constructor() {
+    super();
 
     this.getIconGivenStatus = this.getIconGivenStatus.bind(this);
     this.getBackgroundColorGivenStatus = this.getBackgroundColorGivenStatus.bind(this);
-
-    // 
   }
 
   handleTouchTap(url) {
@@ -54,6 +52,7 @@ class ProjectListItem extends Component {
 
   render() {
     return (
+      /* beautify preserve:start */
       <ListItem
         key={this.props.project.id}
         primaryText={this.props.project.title}
@@ -62,8 +61,10 @@ class ProjectListItem extends Component {
         rightIcon={<ContentForward />}
         onTouchTap={ () => { this.handleTouchTap(this.props.project.url) }}
       />
-    );
-  }
+      /* beautify preserve:end */
+  );
+}
+
 }
 
 export default ProjectListItem;
