@@ -11,8 +11,8 @@ import ProjectList from './ProjectList';
 
 class Projects extends Component {
 
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
       projects: [],
@@ -35,14 +35,17 @@ class Projects extends Component {
 
   render() {
     return (
+      /* beautify preserve:start */
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div className="container">
-        <ProjectAppBar projectsCount={this.state.projectsCount}/>
-        <ProjectList projects={this.state.projects} />
-      </div>
+          <ProjectAppBar projectsCount={this.state.projectsCount}/>
+          <ProjectList projects={this.state.projects} />
+        </div>
       </MuiThemeProvider>
+      /* beautify preserve:end */
     );
   }
+
 }
 
 export default Projects;
