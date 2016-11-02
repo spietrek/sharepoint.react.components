@@ -12,9 +12,10 @@ import {
 import ProjectListItem from './ProjectListItem';
 
 class ProjectList extends Component {
-  
+
   render() {
     return (
+      /* beautify preserve:start */
       <div className="container">
         <Paper zDepth={5}>
           <List>
@@ -35,8 +36,10 @@ class ProjectList extends Component {
           </List>
         </Paper>
       </div>
+      /* beautify preserve:end */
     );
   }
+
 }
 
 export default ProjectList;
