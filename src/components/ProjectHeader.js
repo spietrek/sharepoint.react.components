@@ -5,7 +5,7 @@ import React, {
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 
-class ProjectAppBar extends Component {
+class ProjectHeader extends Component {
 
   render() {
     return (
@@ -21,12 +21,12 @@ class ProjectAppBar extends Component {
 
 }
 
-export default ProjectAppBar;
+export default ProjectHeader;
 
-ProjectAppBar.propTypes = {
+ProjectHeader.propTypes = {
   projectsCount: PropTypes.string.isRequired
 };
 
-ProjectAppBar.defaultProps = {
+ProjectHeader.defaultProps = {
   projectsCount: "0 Projects"
 }
