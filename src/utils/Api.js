@@ -3,7 +3,8 @@ import axios from 'axios';
 function getProjects() {
   var baseUrl = window._spPageContextInfo.webAbsoluteUrl;
   var request = baseUrl +
-    '/_api/lists/getbytitle(\'High%20Priority%20Projects\')/items?$top=50&$select=ID,Title,Status&$orderBy=Title asc';
+    '/_api/lists/getbytitle(\'High%20Priority%20Projects\')/'+
+    'items?$top=50&$select=ID,Title,Status&$orderBy=Title asc';
   return axios.get(request);
 }
 
