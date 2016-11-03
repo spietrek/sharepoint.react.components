@@ -6,7 +6,7 @@ import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Api from '../utils/Api';
-import ProjectAppBar from './ProjectAppBar';
+import ProjectHeader from './ProjectHeader';
 import ProjectList from './ProjectList';
 
 class Projects extends Component {
@@ -38,7 +38,7 @@ class Projects extends Component {
       /* beautify preserve:start */
       <MuiThemeProvider muiTheme={getMuiTheme(lightBaseTheme)}>
         <div className="container">
-          <ProjectAppBar projectsCount={this.state.projectsCount}/>
+          <ProjectHeader projectsCount={this.state.projectsCount}/>
           <ProjectList projects={this.state.projects} />
         </div>
       </MuiThemeProvider>
